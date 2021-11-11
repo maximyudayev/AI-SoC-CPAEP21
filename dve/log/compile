@@ -1,0 +1,112 @@
+Command: vcs -full64 -sverilog -timescale=1ns/1ps +notimingchecks -notice -top tbench_top \
+-Mdir=../csrc -debug_access+all -l ../log/compile -o ../out/simv -f sourcefile_order \
+
+                         Chronologic VCS (TM)
+         Version M-2017.03_Full64 -- Thu Nov  4 08:50:35 2021
+               Copyright (c) 1991-2017 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'rtl_building_blocks/device/adder.sv'
+Parsing design file 'rtl_building_blocks/device/multiplier.sv'
+Parsing design file 'rtl_building_blocks/device/register.sv'
+Parsing design file 'rtl_building_blocks/device/memory.sv'
+Parsing design file 'rtl_building_blocks/device/fifo.sv'
+Parsing design file 'rtl_building_blocks/device/mac.sv'
+Parsing design file 'device/controller_fsm.sv'
+Parsing design file 'device/top_chip.sv'
+Parsing design file 'device/top_system.sv'
+Parsing design file 'rtl_building_blocks/test/multiplier_tb.sv'
+Parsing design file 'rtl_building_blocks/test/adder_tb.sv'
+Parsing design file 'rtl_building_blocks/test/fifo_tb.sv'
+Parsing design file 'test/common.sv'
+Parsing design file 'test/intf.sv'
+Parsing design file 'test/transaction.sv'
+Parsing design file 'test/driver.sv'
+Parsing design file 'test/monitor.sv'
+Parsing design file 'test/generator.sv'
+Parsing design file 'test/checker.sv'
+Parsing design file 'test/scoreboard.sv'
+Parsing design file 'test/environment.sv'
+Parsing design file 'test/testprogram.sv'
+Parsing design file 'test/tbench_top.sv'
+Top Level Modules:
+       tbench_top
+TimeScale is 1 ns / 1 ps
+
+Warning-[PCWM-W] Port connection width mismatch
+device/top_chip.sv, 70
+"controller_fsm #($clog2(EXT_MEM_HEIGHT), FEATURE_MAP_WIDTH, FEATURE_MAP_HEIGHT, INPUT_NB_CHANNELS, OUTPUT_NB_CHANNELS, KERNEL_SIZE) controller( .clk (clk),  .arst_n_in (arst_n_in),  .start (start),  .running (running),  .mem_we (ext_mem_write_en),  .mem_write_addr (ext_mem_write_addr),  .mem_re (ext_mem_read_en),  .mem_read_addr (ext_mem_read_addr),  .a_valid (a_valid),  .a_ready (a_ready),  .b_valid (b_valid),  .b_ready (b_ready),  .write_a (write_a),  .write_b (write_b),  .mac_valid (mac_valid),  .mac_accumulate_internal (mac_accumulate_internal),  .mac_accumulate_with_0 (mac_accumulate_with_0),  .output_valid (output_valid),  .output_x (output_x),  .output_y (output_y),  .output_ch (output_ch));"
+  The following 6-bit expression is connected to 32-bit port "output_x" of 
+  module "controller_fsm", instance "controller".
+  Expression: output_x
+  	use +lint=PCWM for more details
+
+
+Warning-[PCWM-W] Port connection width mismatch
+device/top_chip.sv, 70
+"controller_fsm #($clog2(EXT_MEM_HEIGHT), FEATURE_MAP_WIDTH, FEATURE_MAP_HEIGHT, INPUT_NB_CHANNELS, OUTPUT_NB_CHANNELS, KERNEL_SIZE) controller( .clk (clk),  .arst_n_in (arst_n_in),  .start (start),  .running (running),  .mem_we (ext_mem_write_en),  .mem_write_addr (ext_mem_write_addr),  .mem_re (ext_mem_read_en),  .mem_read_addr (ext_mem_read_addr),  .a_valid (a_valid),  .a_ready (a_ready),  .b_valid (b_valid),  .b_ready (b_ready),  .write_a (write_a),  .write_b (write_b),  .mac_valid (mac_valid),  .mac_accumulate_internal (mac_accumulate_internal),  .mac_accumulate_with_0 (mac_accumulate_with_0),  .output_valid (output_valid),  .output_x (output_x),  .output_y (output_y),  .output_ch (output_ch));"
+  The following 6-bit expression is connected to 32-bit port "output_y" of 
+  module "controller_fsm", instance "controller".
+  Expression: output_y
+  	use +lint=PCWM for more details
+
+
+Warning-[PCWM-W] Port connection width mismatch
+device/top_chip.sv, 70
+"controller_fsm #($clog2(EXT_MEM_HEIGHT), FEATURE_MAP_WIDTH, FEATURE_MAP_HEIGHT, INPUT_NB_CHANNELS, OUTPUT_NB_CHANNELS, KERNEL_SIZE) controller( .clk (clk),  .arst_n_in (arst_n_in),  .start (start),  .running (running),  .mem_we (ext_mem_write_en),  .mem_write_addr (ext_mem_write_addr),  .mem_re (ext_mem_read_en),  .mem_read_addr (ext_mem_read_addr),  .a_valid (a_valid),  .a_ready (a_ready),  .b_valid (b_valid),  .b_ready (b_ready),  .write_a (write_a),  .write_b (write_b),  .mac_valid (mac_valid),  .mac_accumulate_internal (mac_accumulate_internal),  .mac_accumulate_with_0 (mac_accumulate_with_0),  .output_valid (output_valid),  .output_x (output_x),  .output_y (output_y),  .output_ch (output_ch));"
+  The following 5-bit expression is connected to 32-bit port "output_ch" of 
+  module "controller_fsm", instance "controller".
+  Expression: output_ch
+  	use +lint=PCWM for more details
+
+
+Lint-[PCTI-L] Ports coerced to input
+test/testprogram.sv, 1
+"intf_i"
+  Port "intf_i" declared as inout in module "testprogram" does not have any 
+  load in parent module or is connected to constant, it may need to be input. 
+  Coercing to input.
+
+Starting vcs inline pass...
+7 unique modules to generate
+Generating code for _VCSgd_hEeZs
+recompiling package vcs_paramclassrepository
+Generating code for _VCSgd_DJpvB
+Generating code for _VCSgd_reYIK
+Generating code for _VCSgd_Qq4Ev
+recompiling module adder
+Generating code for _VCSgd_m6KP2
+recompiling module multiplier
+Generating code for _VCSgd_zkDLe
+recompiling module top_system
+Generating code for _VCSgd_k6LTY
+recompiling module intf
+Generating code for _VCSgd_arjKm
+recompiling module testprogram
+Generating code for _VCSgd_Mk7In
+recompiling module tbench_top
+All of 7 modules done
+make[1]: Entering directory '/users/students/r0483515/Documents/CPAED/21221/csrc' \
+
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x /users/students/r0483515/Documents/CPAED/21221/src/../out/simv ]; then chmod \
+-x /users/students/r0483515/Documents/CPAED/21221/src/../out/simv; fi
+g++  -o /users/students/r0483515/Documents/CPAED/21221/src/../out/simv   -Wl,-rpath-link=./ \
+-Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir \
+-rdynamic   objs/amcQw_d.o   _4802_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o \
+rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libzerosoft_rt_stubs.so \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsnpsmalloc.so    /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsnew.so \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsimprofile.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libuclinative.so \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_tls.o   -Wl,-whole-archive \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvcsucli.so -Wl,-no-whole-archive \
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_save_restore_new.o \
+-ldl  -lc -lm -lpthread -ldl 
+/users/students/r0483515/Documents/CPAED/21221/src/../out/simv up to date
+make[1]: Leaving directory '/users/students/r0483515/Documents/CPAED/21221/csrc' \
+
+CPU time: .393 seconds to compile + .238 seconds to elab + .137 seconds to link

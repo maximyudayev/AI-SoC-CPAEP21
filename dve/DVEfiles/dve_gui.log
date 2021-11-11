@@ -1,0 +1,44 @@
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version M-2017.03_Full64; Runtime version M-2017.03_Full64;  Nov  4 08:50 2021
+VCD+ Writer M-2017.03_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+The design has assertions or cover properties.
+The assertion browser can be used to view them. Click on the assertion toolbar button or use the menu 'Window->Panes->Assertion' to open it.
+The file '/tmp/interr0483515.vpd' was opened successfully.
+Error-[UCLI-STOP-UNABLE-SET-STOP-POINT] Unable to set breakpoint
+  The setting of line breakpoint in file 
+  /users/students/r0483515/Documents/CPAED/21221/src/test/tbench_top.sv line 
+  24 due to 'stop' command was not successful. 
+  Please verify that the 'stop' command arguments are valid and that the 
+  statement/enclosing subprogram at file/line is complete and used in the 
+  design.  Also verify that the statement on which the BP is being added is in
+  a module compiled with line debug capability.  Please recompile using the 
+  '-debug_access<+options>' switch and incremental options as required.  
+  Recommended options are '-debug_access' for post-process debug, 
+  '-debug_access+classdbg' for testbench debug, and '-debug_access+all' for 
+  all debug capabilities.  Refer the VCS user guide for more granular options 
+  for debug control under the switch '-debug_access' and refer to 
+  '-debug_region' for region control.
+Error-[UCLI-STOP-UNABLE-SET-STOP-POINT] Unable to set breakpoint
+  The setting of line breakpoint in file 
+  /users/students/r0483515/Documents/CPAED/21221/src/test/tbench_top.sv line 
+  24 due to 'stop' command was not successful. 
+  Please verify that the 'stop' command arguments are valid and that the 
+  statement/enclosing subprogram at file/line is complete and used in the 
+  design.  Also verify that the statement on which the BP is being added is in
+  a module compiled with line debug capability.  Please recompile using the 
+  '-debug_access<+options>' switch and incremental options as required.  
+  Recommended options are '-debug_access' for post-process debug, 
+  '-debug_access+classdbg' for testbench debug, and '-debug_access+all' for 
+  all debug capabilities.  Refer the VCS user guide for more granular options 
+  for debug control under the switch '-debug_access' and refer to 
+  '-debug_region' for region control.
+Warning: [AD-MD] Missing dump for active drivers
+  Missing dump for the following signals when doing active drivers analysis:
+      * tbench_top.dut.top_chip_i.mac_unit.add.unscaled_out from time 0
+  Some drivers couldn't be analyzed and will be shown as active.
+  Please dump the listed signals if you need more precise active drivers 
+  analysis.
+es/syn/generic.sdb'
+1 driver (1 active statement) found for signal: tbench_top.dut.top_chip_i.mac_unit.add.out_wo_delay[31:0]

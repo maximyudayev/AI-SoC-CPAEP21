@@ -1,0 +1,160 @@
+{
+    "MlibObjs": {},
+    "CompileStrategy": "fullobj",
+    "SIMBData": {
+        "bytes": 114941,
+        "out": "amcQwB.o",
+        "archive": "archive.0/_4802_archive_1.a"
+    },
+    "PrevCompiledModules": {},
+    "NameTable": {
+        "vcs_paramclassrepository": [
+            "vcs_paramclassrepository",
+            "hEeZs",
+            "module",
+            1
+        ],
+        "_vcs_unit__3685399459": [
+            "_vcs_unit__3685399459",
+            "DJpvB",
+            "module",
+            2
+        ],
+        "multiplier": [
+            "multiplier",
+            "m6KP2",
+            "module",
+            5
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module",
+            3
+        ],
+        "adder": [
+            "adder",
+            "Qq4Ev",
+            "module",
+            4
+        ],
+        "top_system": [
+            "top_system",
+            "zkDLe",
+            "module",
+            6
+        ],
+        "intf": [
+            "intf",
+            "k6LTY",
+            "module",
+            7
+        ],
+        "testprogram": [
+            "testprogram",
+            "arjKm",
+            "module",
+            8
+        ],
+        "tbench_top": [
+            "tbench_top",
+            "Mk7In",
+            "module",
+            9
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module",
+            10
+        ]
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "stat": {
+        "outputSizePerQuad": 76.362524146812618,
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.140288,
+            "ru_stime_sec": 0.041118000000000002,
+            "ru_minflt": 9304,
+            "ru_maxrss_kb": 113996,
+            "ru_majflt": 818,
+            "ru_nvcsw": 1318,
+            "ru_nivcsw": 0
+        },
+        "peak_mem_kb": 304684,
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0046870000000000002,
+            "ru_stime_sec": 0.011056,
+            "ru_minflt": 1785,
+            "ru_maxrss_kb": 31720,
+            "ru_majflt": 0,
+            "ru_nvcsw": 43,
+            "ru_nivcsw": 1
+        },
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0046870000000000002,
+            "ru_stime_sec": 0.011056,
+            "ru_minflt": 1785,
+            "ru_maxrss_kb": 31720,
+            "ru_majflt": 0,
+            "ru_nvcsw": 43,
+            "ru_nivcsw": 1
+        },
+        "nMops": 28697,
+        "mopSpeed": 183188.32068329363,
+        "nQuads": 10871,
+        "totalObjSize": 830137,
+        "ru_self_end": {
+            "ru_utime_sec": 0.29694100000000001,
+            "ru_stime_sec": 0.043092999999999999,
+            "ru_minflt": 10985,
+            "ru_maxrss_kb": 122176,
+            "ru_majflt": 862,
+            "ru_nvcsw": 1496,
+            "ru_nivcsw": 2
+        },
+        "quadSpeed": 69395.41534474284,
+        "CodeGen(%)": 52.755597913390204,
+        "Frontend(%)": 47.244402086609796,
+        "mop/quad": 2.6397755496274491
+    },
+    "CurCompileUdps": {},
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "vcs_paramclassrepository",
+        "vcs_paramclassrepository",
+        "_vcs_unit__3685399459",
+        "_vcs_unit__3685399459",
+        "std",
+        "std",
+        "adder",
+        "adder",
+        "multiplier",
+        "multiplier",
+        "top_system",
+        "top_system",
+        "intf",
+        "intf",
+        "testprogram",
+        "testprogram",
+        "tbench_top",
+        "tbench_top"
+    ],
+    "CompileStatus": "Successful",
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.4802.json"
+    ],
+    "Misc": {
+        "cwd": "/users/students/r0483515/Documents/CPAED/21221/src",
+        "csrc": "../csrc",
+        "csrc_abs": "/users/students/r0483515/Documents/CPAED/21221/csrc",
+        "daidir": "/users/students/r0483515/Documents/CPAED/21221/src/../out/simv.daidir",
+        "daidir_abs": "/users/students/r0483515/Documents/CPAED/21221/out/simv.daidir",
+        "default_output_dir": "../csrc",
+        "archive_dir": "archive.0"
+    }
+}

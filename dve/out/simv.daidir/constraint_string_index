@@ -1,0 +1,3 @@
+1 10 delay_x100 1
+1 35 rtl_building_blocks/device/adder.sv 2
+1 40 rtl_building_blocks/device/multiplier.sv 3

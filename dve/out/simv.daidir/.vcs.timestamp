@@ -1,0 +1,142 @@
+0 
+35
++itf+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcsdp_lite.tab
++notimingchecks
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/esat/micas-data/software/Synopsys/vcs_2017.03/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mdir=../csrc
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsnpsmalloc.so
+-Mout=../out/simv
+-Msaverestoreobj=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/esat/micas-data/software/Synopsys/vcs_2017.03/include
+-Xnotice=1
+-debug_access+all
+-f sourcefile_order
+-full64
+-gen_obj
+-l
+-o ../out/simv
+-picarchive
+-sverilog
+-timescale=1ns/1ps
+-top
+../log/compile
+/esat/micas-data/software/Synopsys/vcs_2017.03/linux64/bin/vcs1
+tbench_top
+69
+sysc_uni_pwd=/users/students/r0483515/Documents/CPAED/21221/src
+XMODIFIERS=@im=ibus
+XDG_VTNR=2
+XDG_SESSION_TYPE=x11
+XDG_SESSION_ID=2
+XDG_SESSION_DESKTOP=gnome
+XDG_SEAT=seat0
+XDG_RUNTIME_DIR=/run/user/249286
+XDG_MENU_PREFIX=gnome-
+XDG_DATA_DIRS=/users/students/r0483515/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+XDG_CURRENT_DESKTOP=GNOME
+XAUTHORITY=/run/user/249286/gdm/Xauthority
+WINDOWPATH=2
+VTE_VERSION=5204
+VMR_MODE_FLAG=64
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=../log/compile
+VCS_HOME=/esat/micas-data/software/Synopsys/vcs_2017.03
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH_OVERRIDE=linux
+VCS_ARCH=linux64
+USERNAME=r0483515
+UNAME=/bin/uname
+TOOL_HOME=/esat/micas-data/software/Synopsys/vcs_2017.03/linux64
+S_COLORS=auto
+SSH_AUTH_SOCK=/run/user/249286/keyring/ssh
+SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/1962,unix/unix:/tmp/.ICE-unix/1962
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_IM_MODULE=ibus
+OVA_UUM=0
+MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+MODULESHOME=/usr/share/Modules
+MODULEPATH_modshare=/usr/share/modulefiles:1:/usr/share/Modules/modulefiles:1:/etc/modulefiles:1
+MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+MICAS_LICENSE_FILE=/users/micas/micas/license/license.dat
+MFLAGS=
+MAKE_TERMOUT=/dev/pts/0
+MAKE_TERMERR=/dev/pts/0
+MAKELEVEL=1
+MAKEFLAGS=
+MAILCHECK=0
+LOADEDMODULES=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+KRB5CCNAME=KCM:
+KDEDIRS=/usr
+HISTCONTROL=ignoredups
+GS_OPTIONS=-sPAPERSIZE=a4
+GNOME_TERMINAL_SERVICE=:1.74
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/b9753516_b4c1_44c1_bbfd_89cd3a1392ee
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+GJS_DEBUG_OUTPUT=stderr
+GDM_LANG=en_US.UTF-8
+GDMSESSION=gnome
+GDK_BACKEND=x11
+ESAT_ARCH=linux-x86_64
+DESKTOP_SESSION=gnome
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/249286/bus
+COLORTERM=truecolor
+CDS_LIC_FILE=27002@license-extern
+BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
+BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
+BASH_FUNC_module%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
+BASH_FUNC_ml%%=() {  module ml "$@"_}
+0
+27
+1487226392 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/packages/lpa/AN.DB
+1487226386 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/packages/upf/AN.DB
+1636011284 test/tbench_top.sv
+1636011284 test/testprogram.sv
+1636011284 test/environment.sv
+1636011284 test/scoreboard.sv
+1636011284 test/checker.sv
+1636011284 test/generator.sv
+1636011284 test/monitor.sv
+1636011284 test/driver.sv
+1636011284 test/transaction.sv
+1636011284 test/intf.sv
+1636011284 test/common.sv
+1636011284 rtl_building_blocks/test/fifo_tb.sv
+1636011284 rtl_building_blocks/test/adder_tb.sv
+1636011284 rtl_building_blocks/test/multiplier_tb.sv
+1636011284 device/top_system.sv
+1636011284 device/top_chip.sv
+1636011284 device/controller_fsm.sv
+1636011284 rtl_building_blocks/device/mac.sv
+1636011284 rtl_building_blocks/device/fifo.sv
+1636011284 rtl_building_blocks/device/memory.sv
+1636011284 rtl_building_blocks/device/register.sv
+1636011284 rtl_building_blocks/device/multiplier.sv
+1636011284 rtl_building_blocks/device/adder.sv
+1636011284 sourcefile_order
+1487217861 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/vcsdp_lite.tab
+4
+0 
+1487220396 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libvirsim.so
+1487219634 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/liberrorinf.so
+1487219608 /esat/micas-data/software/Synopsys/vcs_2017.03/linux64/lib/libsnpsmalloc.so
+1636012238 ../out/simv.daidir

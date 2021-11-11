@@ -1,0 +1,171 @@
+{
+    "CompUnits": {
+        "amcQw_d": {
+            "checksum": 0,
+            "mod": "...MASTER...",
+            "bytes": 8222,
+            "out": "objs/amcQw_d.o",
+            "mode": 4
+        },
+        "Qq4Ev_d": {
+            "checksum": 0,
+            "mod": "adder",
+            "bytes": 29093,
+            "out": "Qq4Ev_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "hEeZs_d": {
+            "checksum": 0,
+            "mod": "vcs_paramclassrepository",
+            "bytes": 328286,
+            "out": "hEeZs_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "reYIK_d": {
+            "checksum": 0,
+            "mod": "std",
+            "bytes": 41961,
+            "out": "reYIK_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "arjKm_d": {
+            "checksum": 0,
+            "mod": "testprogram",
+            "bytes": 17176,
+            "out": "arjKm_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "DJpvB_d": {
+            "checksum": 0,
+            "mod": "_vcs_unit__3685399459",
+            "bytes": 35380,
+            "out": "DJpvB_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "m6KP2_d": {
+            "checksum": 0,
+            "mod": "multiplier",
+            "bytes": 27523,
+            "out": "m6KP2_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "zkDLe_d": {
+            "checksum": 0,
+            "mod": "top_system",
+            "bytes": 145338,
+            "out": "zkDLe_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "k6LTY_d": {
+            "checksum": 0,
+            "mod": "intf",
+            "bytes": 63584,
+            "out": "k6LTY_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        },
+        "Mk7In_d": {
+            "checksum": 0,
+            "mod": "tbench_top",
+            "bytes": 18633,
+            "out": "Mk7In_d.o",
+            "mode": 4,
+            "archive": "archive.0/_4802_archive_1.a"
+        }
+    },
+    "Modules": {
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "...MASTER...": {},
+        "vcs_paramclassrepository": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "_vcs_unit__3685399459": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "multiplier": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "adder": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "top_system": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "intf": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "testprogram": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "tbench_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_4802_archive_1.a",
+            "objects": [
+                [
+                    "hEeZs_d.o",
+                    328286
+                ],
+                [
+                    "DJpvB_d.o",
+                    35380
+                ],
+                [
+                    "reYIK_d.o",
+                    41961
+                ],
+                [
+                    "Qq4Ev_d.o",
+                    29093
+                ],
+                [
+                    "m6KP2_d.o",
+                    27523
+                ],
+                [
+                    "zkDLe_d.o",
+                    145338
+                ],
+                [
+                    "k6LTY_d.o",
+                    63584
+                ],
+                [
+                    "arjKm_d.o",
+                    17176
+                ],
+                [
+                    "Mk7In_d.o",
+                    18633
+                ],
+                [
+                    "amcQwB.o",
+                    114941
+                ]
+            ],
+            "size": 821915
+        }
+    ]
+}

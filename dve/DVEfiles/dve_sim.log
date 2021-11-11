@@ -1,0 +1,82 @@
+08:50:42    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe out/simv  -pid 4990 -toolin /tmp/vcs_20211104075038_4984_r0483515..stdin -toolout /tmp/vcs_20211104075038_4984_r0483515..stdout  
+08:50:42    17 -->                                                                 [tcl] set ucliGUI::state
+08:50:42    18 -->                                                                     [tcl] gui_update_simulator_buttons
+08:50:43    19 -->                                                                         [tcl] set ucliGUI::state
+08:50:43    20 -->                                                                             [tcl] ucliCore::getToolPID
+08:50:43    21 -->                                                                                 [tcl] synopsys::env hasTB
+08:50:43    22 -->                                                                                     [tcl] trigger_hier_stack_context_switch 0
+08:50:43    23 -->                                                                                         [tcl] synopsys::xml set_array_limit <data limit="50" />
+08:50:43    24 -->                                                                                             [tcl] synopsys::xml set_depth_limit <data limit="100" />
+08:50:43    25 --> ...  [tcl] synopsys::xml set_string_limit <data limit="1000" />
+08:50:43    26 --> ...      [tcl] synopsys::xml set_only_active_frame <data value="1" />
+08:50:43    27 --> ...          [tcl] synopsys::xml set_variable_frame_id <data value="1" />
+08:50:43    28 --> ...              [tcl] synUtils::setDVEInitPhase 1
+08:50:43    29 --> ...                  [tcl] gui_get_env SIMSETUP::SIMVPD
+08:50:43    30 --> ...                      [tcl] synopsys::dump -type VPD -file /tmp/interr0483515.vpd -locking
+08:50:43    31 --> ...                          [tcl] synopsys::dump -autoflush on -fid VPD0
+08:50:43    32 --> ...                              [tcl] set ::dve_fid VPD0
+08:50:43    33 --> ...                                  [tcl] synUtils::setDVEInitPhase 0
+08:50:43    34 --> ...                                      [tcl] ucliCore::getToolPID
+08:50:43    35 --> ...                                          [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpPundTE
+08:50:43    36 --> ...                                              [tcl] synUtils::sendTool -active {_icl_start_rpc -version "M-2017.03_Full64" -sync_file /tmp/vcs_dve_rpc.r0483515.4990}
+08:50:43    37 --> ...                                                  [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.r0483515.4990}
+08:50:43    38 --> ...                                                      [tcl] dveMisc::vbusExpand tbench_top
+08:50:43    39 --> ...                                                          [tcl] dveMisc::vbusExpand _vcs_unit__3685399459
+08:50:44    40 --> ...                                                              [tcl] config endofsim noexit
+08:50:44    41 --> ...                                                                  [tcl] config onfail enable all
+08:50:44    42 --> ...                                                                      [tcl] config syscaddplainmembers
+08:50:44    43 --> ...                                                                          [tcl] config syscaddsourcenames
+08:50:44    44 --> ...                                                                              [tcl] config syscaddstructtypes
+08:50:44    45 --> ...                                                                                  [tcl] synopsys::listing -disable
+08:52:28    46 --> ...                                                                                      [tcl] synopsys::dump -add {tbench_top.intf_i } -aggregates  -fid VPD0
+08:52:30    47 --> ...                                                                                          [tcl] synopsys::watch  -file  $::env(PWD)/src/test/tbench_top.sv  -line  24
+08:52:57    48 --> ...                                                                                              [tcl] synopsys::watch  -file  $::env(PWD)/src/test/tbench_top.sv  -line  24
+09:00:35    49 --> ...                                                                                                  [tcl] dveMisc::vbusExpand tbench_top.dut
+09:00:43    50 --> ...  [tcl] synopsys::dump -add {tbench_top.intf_i.tb } -aggregates  -fid VPD0
+09:08:06    51 --> ...      [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i
+09:08:38    52 --> ...          [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.a_r
+09:08:44    53 --> ...              [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.controller
+09:08:47    54 --> ...                  [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.mac_unit
+09:09:00    55 --> ...                      [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit -radix {hexadecimal } -list {{out[31:0]} }
+09:09:54    56 --> ...                          [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.mac_unit.accumulator_value_r
+09:10:46    57 --> ...                              [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.mac_unit.add
+09:11:33    58 --> ...                                  [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{b_extended[63:0]} }
+09:11:33    59 --> ...                                      [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{a_extended[63:0]} }
+09:11:33    60 --> ...                                          [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {decimal } -list {A_WIDTH }
+09:11:34    61 --> ...                                              [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {decimal } -list {OUT_WIDTH }
+09:12:21    62 --> ...                                                  [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {decimal } -list {OUT_SCALE }
+09:12:23    63 --> ...                                                      [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{unscaled_out[63:0]} }
+09:12:25    64 --> ...                                                          [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{out_wo_delay[31:0]} }
+09:12:44    65 --> ...                                                              [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {decimal } -list {INTERMEDIATE_WIDTH }
+09:13:30    66 --> ...                                                                  [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{a[31:0]} }
+09:13:35    67 --> ...                                                                      [tcl] synopsys::dump -add {tbench_top.dut.top_chip_i.mac_unit.add.out_wo_delay} -aggregates  -fid VPD0
+09:13:37    68 --> ...                                                                          [tcl] synopsys::watch  -file  $::env(PWD)/src/rtl_building_blocks/device/adder.sv  -line  23
+09:13:37    69 --> ...                                                                              [tcl] synopsys::watch -raw
+09:13:37    70 --> ...                                                                                  [tcl] gui_postwatch -bpid 1  -line 23 -file /users/students/r0483515/Documents/CPAED/21221/src/rtl_building_blocks/device/adder.sv
+09:13:38    71 --> ...                                                                                      [tcl] synopsys::watch  -disable {1}
+09:13:38    72 --> ...                                                                                          [tcl] synopsys::watch -raw
+09:13:38    73 --> ...                                                                                              [tcl] gui_postwatch -bpid 1 -disable 1
+09:13:43    74 --> ...                                                                                                  [tcl] synopsys::watch  -delete { 1}
+09:13:43    75 --> ...  [tcl] synopsys::watch -raw
+09:13:43    76 --> ...      [tcl] gui_postwatch -bpid 1 -delete { 1}
+09:13:47    77 --> ...          [tcl] synopsys::watch  -file  $::env(PWD)/src/rtl_building_blocks/device/adder.sv  -line  19
+09:13:47    78 --> ...              [tcl] synopsys::watch -raw
+09:13:47    79 --> ...                  [tcl] gui_postwatch -bpid 2  -line 19 -file /users/students/r0483515/Documents/CPAED/21221/src/rtl_building_blocks/device/adder.sv
+09:13:48    80 --> ...                      [tcl] synopsys::watch  -file  $::env(PWD)/src/rtl_building_blocks/device/adder.sv  -line  23
+09:13:48    81 --> ...                          [tcl] synopsys::watch -raw
+09:13:48    82 --> ...                              [tcl] gui_postwatch -bpid 3  -line 23 -file /users/students/r0483515/Documents/CPAED/21221/src/rtl_building_blocks/device/adder.sv
+09:13:49    83 --> ...                                  [tcl] synopsys::watch  -disable {2}
+09:13:49    84 --> ...                                      [tcl] synopsys::watch -raw
+09:13:49    85 --> ...                                          [tcl] gui_postwatch -bpid 2 -disable 2
+09:13:50    86 --> ...                                              [tcl] synopsys::watch  -disable {3}
+09:13:50    87 --> ...                                                  [tcl] synopsys::watch -raw
+09:13:50    88 --> ...                                                      [tcl] gui_postwatch -bpid 3 -disable 3
+09:14:02    89 --> ...                                                          [tcl] synopsys::watch  -delete [gui_watch_info -ids]
+09:14:02    90 --> ...                                                              [tcl] synopsys::watch -raw
+09:14:02    91 --> ...                                                                  [tcl] gui_postwatch -bpid 2 -delete { 2 3 }
+09:15:22    92 --> ...                                                                      [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {decimal } -list {B_WIDTH }
+09:15:36    93 --> ...                                                                          [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{b[31:0]} }
+09:15:49    94 --> ...                                                                              [tcl] ucliGUI::getSignalValues -scope tbench_top.dut.top_chip_i.mac_unit.add -radix {hexadecimal } -list {{out[31:0]} }
+09:18:08    95 --> ...                                                                                  [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.mac_unit.mul
+09:18:30    96 --> ...                                                                                      [tcl] dveMisc::vbusExpand tbench_top.dut.top_chip_i.controller.ch_in_r
+09:19:23    97 --> ...                                                                                          [tcl] dveMisc::vbusExpand tbench_top.t1
