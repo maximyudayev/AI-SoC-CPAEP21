@@ -4,7 +4,8 @@ module controller_fsm #(
     parameter int FEATURE_MAP_HEIGHT  = 1024,
     parameter int INPUT_NB_CHANNELS   = 64,
     parameter int OUTPUT_NB_CHANNELS  = 64,
-    parameter int KERNEL_SIZE         = 3
+    parameter int KERNEL_SIZE         = 3,
+    parameter int SIMD_WIDTH          = 36
   )
   (
     input logic clk,

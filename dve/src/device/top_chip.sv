@@ -8,7 +8,8 @@ module top_chip #(
     parameter int INPUT_NB_CHANNELS     = 64,
     parameter int OUTPUT_NB_CHANNELS    = 64,
     parameter int KERNEL_SIZE           = 3,
-    parameter int NUM_MAC_UNITS         = 1
+    parameter int NUM_MAC_UNITS         = 1,
+    parameter int SIMD_WIDTH            = 36
   )
   (
     input logic clk,
@@ -67,7 +68,8 @@ module top_chip #(
     .FEATURE_MAP_HEIGHT(FEATURE_MAP_HEIGHT),
     .INPUT_NB_CHANNELS(INPUT_NB_CHANNELS),
     .OUTPUT_NB_CHANNELS(OUTPUT_NB_CHANNELS),
-    .KERNEL_SIZE(KERNEL_SIZE))
+    .KERNEL_SIZE(KERNEL_SIZE),
+    .SIMD_WIDTH(SIMD_WIDTH))
   controller(
     .clk(clk),
     .arst_n_in(arst_n_in),
@@ -109,16 +111,17 @@ module top_chip #(
         .B_WIDTH(IO_DATA_WIDTH),
         .ACCUMULATOR_WIDTH(ACCUMULATION_WIDTH),
         .OUTPUT_WIDTH(ACCUMULATION_WIDTH),
-        .OUTPUT_SCALE(0))
-      mac_unit(
+        .OUTPUT_SCALE(0),
+        .SIMD_WIDTH(SIMD_WIDTH))
+      mac(
         .clk(clk),
         .arst_n_in(arst_n_in),
         .input_valid(mac_valid),
-        .accumulate_internal(mac_accumulate_internal[i]),
-        .partial_sum_in(mac_partial_sum[i]),
-        .a(a[i]),
-        .b(b[i]),
-        .out(mac_out[i]));
+        .accumulate_internal(mac_accumulate_internal),
+        .partial_sum_in(mac_partial_sum),
+        .a(a),
+        .b(b),
+        .out(mac_out));
   endgenerate
 
   assign out = mac_out;

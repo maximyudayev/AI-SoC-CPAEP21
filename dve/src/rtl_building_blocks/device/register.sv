@@ -23,12 +23,12 @@ module register #(
   assign qout = r;
   
   
-  //area logging
-  initial begin
-    #0;
-    tbench_top.area += 17*WIDTH;
-    $display("%m added %d to area", 17*WIDTH);
-  end
+//  //area logging
+//  initial begin
+//    #0;
+//    tbench_top.area += 17*WIDTH;
+//    $display("%m added %d to area", 17*WIDTH);
+//  end
 
 endmodule
 
@@ -46,12 +46,12 @@ endmodule
 //see fifo for more examples of both manual instantiation and instantiation through this macro
 
 `define REG(r_width, r_name) \
-logic [r_width-1:0] ``r_name``_next, r_name;\
-logic ``r_name``_we;\
-register #(.WIDTH(r_width))\
-``r_name``_r(\
-  .clk(clk),\
-  .arst_n_in(arst_n_in),\
-  .din(``r_name``_next),\
-  .qout(r_name),\
-  .we(``r_name``_we))
+  logic [r_width-1:0] ``r_name``_next, r_name;\
+  logic ``r_name``_we;\
+  register #(.WIDTH(r_width))\
+  ``r_name``_r(\
+    .clk(clk),\
+    .arst_n_in(arst_n_in),\
+    .din(``r_name``_next),\
+    .qout(r_name),\
+    .we(``r_name``_we))
