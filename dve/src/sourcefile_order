@@ -1,6 +1,8 @@
-rtl_building_blocks/device/adder.sv
-rtl_building_blocks/device/multiplier.sv
 rtl_building_blocks/device/register.sv
+rtl_building_blocks/device/adder.sv
+rtl_building_blocks/device/adder_tree_stage.sv
+rtl_building_blocks/device/adder_tree.sv
+rtl_building_blocks/device/multiplier.sv
 rtl_building_blocks/device/memory.sv
 rtl_building_blocks/device/fifo.sv
 rtl_building_blocks/device/mac.sv
@@ -9,6 +11,7 @@ device/top_chip.sv
 device/top_system.sv
 rtl_building_blocks/test/multiplier_tb.sv
 rtl_building_blocks/test/adder_tb.sv
+rtl_building_blocks/test/mac_tb.sv
 rtl_building_blocks/test/fifo_tb.sv
 
 
