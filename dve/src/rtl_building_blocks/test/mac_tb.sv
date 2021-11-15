@@ -1,14 +1,17 @@
 module mac_tb;
   //local parameters for module configuration
-  localparam ACCUMULATOR_WIDTH  = 38;
   localparam OPERAND_WIDTH      = 16;
-  localparam SIMD_WIDTH         = 36;
+  localparam SIMD_WIDTH         = 4;
+  localparam PIPELINE_DEPTH     = $clog2(SIMD_WIDTH);
+  localparam ACCUMULATOR_WIDTH  = OPERAND_WIDTH*2 + PIPELINE_DEPTH;
   localparam OUTPUT_SCALE       = 0;
+  localparam CLK_PERIOD         = 20;
   
   //define DUT IO signals
   logic clk=0, arst_n_in, input_valid;
   logic [ACCUMULATOR_WIDTH-1:0] out;
-  logic [OPERAND_WIDTH-1:0] a, b [0:SIMD_WIDTH-1];
+  logic [OPERAND_WIDTH-1:0] a [0:SIMD_WIDTH-1];
+  logic [OPERAND_WIDTH-1:0] b [0:SIMD_WIDTH-1];
   
   //instantiate DUT
   mac #(
@@ -25,15 +28,18 @@ module mac_tb;
     .b(b),
     .out(out));
   
+  //simulator timescale setup
+  initial $timeformat(-9, 3, "ns", 1);
+  
   //provide clock signal for TB
-  always #10ns clk = ~clk;
+  always #(CLK_PERIOD/2) clk = ~clk;
   
   //test vectors
   initial begin
     //reset the DUT
   	arst_n_in = 0;
   	input_valid = 1;
-  	#10;
+  	#50;
     arst_n_in = 1;
     
     $display("Starting MAC test");
@@ -43,7 +49,7 @@ module mac_tb;
       for(int j = 0; j<SIMD_WIDTH; j++) begin  
         std::randomize(long_a) with {long_a >= -(1<<(OPERAND_WIDTH-1)) && long_a < (1 << (OPERAND_WIDTH-1));};
         std::randomize(long_b) with {long_b >= -(1<<(OPERAND_WIDTH-1)) && long_b < (1 << (OPERAND_WIDTH-1));};
-  
+          
         a[j] = long_a; //place randomized values into the operand vectors
         b[j] = long_b;
           
@@ -56,11 +62,9 @@ module mac_tb;
         long_out -= (1<<ACCUMULATOR_WIDTH);
       end
       
-      #6; //result obtained with latency ceil(log2(N)), N operand vector width
+      #((PIPELINE_DEPTH+1)*CLK_PERIOD); //result obtained with latency ceil(log2(N)), N operand vector width
       assert(long_out == out) else begin
         $display("Wrong: real %0x != %0x expected for", out, long_out);
-        for(int n = 0; n<SIMD_WIDTH; n++)
-           $display("%0x (%0x) and %0x (%0x)", a[n], long_a[n], b[n], long_b[n]);
       end
     end
     $finish;

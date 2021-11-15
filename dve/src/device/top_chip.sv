@@ -12,38 +12,37 @@ module top_chip #(
     parameter int SIMD_WIDTH            = 36
   )
   (
-    input logic clk,
-    input logic arst_n_in,  //asynchronous reset, active low
+    input   logic clk,
+    input   logic arst_n_in,  //asynchronous reset, active low
 
     //external memory read port
-    output logic unsigned[$clog2(EXT_MEM_HEIGHT)-1:0] ext_mem_read_addr,
-    output logic ext_mem_read_en,
-    input logic[EXT_MEM_WIDTH-1:0] ext_mem_qout,
+    output  logic unsigned  [$clog2(EXT_MEM_HEIGHT)-1:0]  ext_mem_read_addr,
+    output  logic                                         ext_mem_read_en,
+    input   logic           [EXT_MEM_WIDTH-1:0]           ext_mem_qout,
     
     //external memory write port
-    output logic unsigned[$clog2(EXT_MEM_HEIGHT)-1:0] ext_mem_write_addr,
-    output logic [EXT_MEM_WIDTH-1:0] ext_mem_din,
-    output logic ext_mem_write_en,
+    output  logic unsigned  [$clog2(EXT_MEM_HEIGHT)-1:0]  ext_mem_write_addr,
+    output  logic           [EXT_MEM_WIDTH-1:0]           ext_mem_din,
+    output  logic                                         ext_mem_write_en,
     
     //system inputs and outputs
-    input logic [IO_DATA_WIDTH-1:0] a_input,
-    input logic a_valid,
-    output logic a_ready,
-    input logic [IO_DATA_WIDTH-1:0] b_input,
-    input logic b_valid,
-    output logic b_ready,
+    input   logic   [IO_DATA_WIDTH-1:0] a_input,
+    input   logic                       a_valid,
+    output  logic                       a_ready,
+    input   logic   [IO_DATA_WIDTH-1:0] b_input,
+    input   logic                       b_valid,
+    output  logic                       tb_ready,
     
     //output
-    output logic signed [IO_DATA_WIDTH-1:0] out,
-    output logic output_valid,
-    output logic [$clog2(FEATURE_MAP_WIDTH)-1:0] output_x,
-    output logic [$clog2(FEATURE_MAP_HEIGHT)-1:0] output_y,
-    output logic [$clog2(OUTPUT_NB_CHANNELS)-1:0] output_ch,
+    output  logic signed [IO_DATA_WIDTH-1:0] out,
+    output  logic output_valid,
+    output  logic [$clog2(FEATURE_MAP_WIDTH)-1:0] output_x,
+    output  logic [$clog2(FEATURE_MAP_HEIGHT)-1:0] output_y,
+    output  logic [$clog2(OUTPUT_NB_CHANNELS)-1:0] output_ch,
     
-    input logic start,
-    output logic running
+    input   logic start,
+    output  logic running
   );
-
 
   logic write_a;
   logic write_b;

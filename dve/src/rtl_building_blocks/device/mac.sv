@@ -1,7 +1,7 @@
 module mac #(
     parameter int A_WIDTH             = 16,
     parameter int B_WIDTH             = 16, 
-    parameter int OUTPUT_WIDTH        = 16,
+    parameter int OUTPUT_WIDTH        = 38,
     parameter int OUTPUT_SCALE        = 0,
     parameter int SIMD_WIDTH          = 36
   )

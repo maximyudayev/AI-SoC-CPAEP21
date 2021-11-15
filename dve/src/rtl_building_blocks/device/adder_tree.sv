@@ -15,52 +15,33 @@ module adder_tree #(
   localparam NUM_ADDER_STAGES = $clog2(NUM_INPUTS);
   localparam ACCUMULATOR_WIDTH = NUM_ADDER_STAGES+INPUT_WIDTH;
   
-  logic signed [ACCUMULATOR_WIDTH-1:0] temp [0:0]; //adder tree stage creates/outputs a bus
-  assign out = temp[0]; //slice that bus into a single 16b signal that MAC output expects
+  //adder tree adder nets for each stage
+  //unused nets will be discarded by the synthesis tool
+  //must ensure to not connect the wires to do that
+  logic signed [ACCUMULATOR_WIDTH-1:0] sum [0:NUM_ADDER_STAGES][0:NUM_INPUTS-1];
+  
+  //connect input and output of adder tree black box to external modules
+  always_comb begin
+    out = sum[NUM_ADDER_STAGES][0]; //output
+    for(int i=0; i<NUM_INPUTS; i=i+1) //input
+      sum[0][i] = in[i];
+  end
   
   //adder stages (not radix-2)
-  //orphan elements get sign extended before next stage
   generate    
-    for(genvar i=0; i<NUM_ADDER_STAGES; i=i+1) begin : genaddstg
-      
-      if(i==0) begin //first stage
-        logic signed [INPUT_WIDTH:0] sum [0:((NUM_INPUTS+(2**(i+1))-1)/(2**(i+1)))-1];
-        adder_tree_stage #(
-          .NUM_INPUTS((NUM_INPUTS+(2**i)-1)/(2**i)),
-          .ACCUMULATOR_WIDTH(INPUT_WIDTH+1),
-          .INPUT_WIDTH(INPUT_WIDTH))
-        adder_stage(
-          .clk(clk),
-          .arst_n_in(arst_n_in),
-          .in(in),
-          .out(sum));
-      end
-      
-      else if(i==NUM_ADDER_STAGES-1) begin //last stage
-        adder_tree_stage #(
-          .NUM_INPUTS((NUM_INPUTS+(2**i)-1)/(2**i)),
-          .ACCUMULATOR_WIDTH(INPUT_WIDTH+i+1),
-          .INPUT_WIDTH(INPUT_WIDTH+i))
-        adder_stage(
-          .clk(clk),
-          .arst_n_in(arst_n_in),
-          .in(genaddstg[i-1].sum),
-          .out(temp));
-      end
-      
-      else begin
-        logic signed [INPUT_WIDTH+i:0] sum [0:((NUM_INPUTS+(2**(i+1))-1)/(2**(i+1)))-1];
-        adder_tree_stage #(
-          .NUM_INPUTS((NUM_INPUTS+(2**i)-1)/(2**i)), //number of inputs for that stage
-          .ACCUMULATOR_WIDTH(INPUT_WIDTH+i+1), //each stage has an extra bit (to account for double the range during add)
-          .INPUT_WIDTH(INPUT_WIDTH+i)) //input width for that stage
-        adder_stage(
-          .clk(clk),
-          .arst_n_in(arst_n_in),
-          .in(genaddstg[i-1].sum),
-          .out(sum));
-      end
-      
-    end : genaddstg
+    for(genvar i=0; i<NUM_ADDER_STAGES; i=i+1)
+      adder_tree_stage #(
+        .NUM_INPUTS               ( `CEIL_DIV(NUM_INPUTS, 2**i) ),
+        .ACCUMULATOR_WIDTH        ( INPUT_WIDTH+i+1 ),
+        .INPUT_WIDTH              ( INPUT_WIDTH+i ),
+        
+        .TEMP_NUM_INPUTS          ( NUM_INPUTS ),
+        .TEMP_ACCUMULATOR_WIDTH   ( ACCUMULATOR_WIDTH ))
+      adder_stage(
+        .clk          ( clk ),
+        .arst_n_in    ( arst_n_in ),
+        .in           ( sum[i] ),
+        .out          ( sum[i+1]) );
   endgenerate
+  
 endmodule
