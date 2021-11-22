@@ -1,8 +1,8 @@
 module mac_tb;
   //local parameters for module configuration
   localparam OPERAND_WIDTH      = 16;
-  localparam SIMD_WIDTH         = 4;
-  localparam PIPELINE_DEPTH     = $clog2(SIMD_WIDTH);
+  localparam VLEN               = 4;
+  localparam PIPELINE_DEPTH     = $clog2(VLEN);
   localparam ACCUMULATOR_WIDTH  = OPERAND_WIDTH*2 + PIPELINE_DEPTH;
   localparam OUTPUT_SCALE       = 0;
   localparam CLK_PERIOD         = 20;
@@ -10,23 +10,23 @@ module mac_tb;
   //define DUT IO signals
   logic clk=0, arst_n_in, input_valid;
   logic [ACCUMULATOR_WIDTH-1:0] out;
-  logic [OPERAND_WIDTH-1:0] a [0:SIMD_WIDTH-1];
-  logic [OPERAND_WIDTH-1:0] b [0:SIMD_WIDTH-1];
+  logic [OPERAND_WIDTH-1:0] a [0:VLEN-1];
+  logic [OPERAND_WIDTH-1:0] b [0:VLEN-1];
   
   //instantiate DUT
   mac #(
-    .A_WIDTH(OPERAND_WIDTH),
-    .B_WIDTH(OPERAND_WIDTH),
-    .OUTPUT_WIDTH(ACCUMULATOR_WIDTH),
-    .OUTPUT_SCALE(OUTPUT_SCALE),
-    .SIMD_WIDTH(SIMD_WIDTH))
-  MAC(
-    .clk(clk),
-    .arst_n_in(arst_n_in),
-    .input_valid(input_valid),
-    .a(a),
-    .b(b),
-    .out(out));
+    .A_WIDTH        ( OPERAND_WIDTH ),
+    .B_WIDTH        ( OPERAND_WIDTH ),
+    .OUTPUT_WIDTH   ( ACCUMULATOR_WIDTH ),
+    .OUTPUT_SCALE   ( OUTPUT_SCALE ),
+    .VLEN           ( VLEN ))
+  mac(
+    .clk            ( clk ),
+    .arst_n_in      ( arst_n_in ),
+    .input_valid    ( input_valid ),
+    .a              ( a ),
+    .b              ( b ),
+    .out            ( out ));
   
   //simulator timescale setup
   initial $timeformat(-9, 3, "ns", 1);
@@ -46,7 +46,7 @@ module mac_tb;
     for(int i = 0; i<100; i++) begin
       longint long_a, long_b, long_out=0;
       
-      for(int j = 0; j<SIMD_WIDTH; j++) begin  
+      for(int j = 0; j<VLEN; j++) begin  
         std::randomize(long_a) with {long_a >= -(1<<(OPERAND_WIDTH-1)) && long_a < (1 << (OPERAND_WIDTH-1));};
         std::randomize(long_b) with {long_b >= -(1<<(OPERAND_WIDTH-1)) && long_b < (1 << (OPERAND_WIDTH-1));};
           
